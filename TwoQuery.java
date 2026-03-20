@@ -29,6 +29,7 @@ public class TwoQuery {
                 for(int j = l; j <= r; j++){
                     arr[j] = (j - l + 1) * base;
                 }
+               
             }
             else if(k == 2){
                 int sum = 0;
@@ -39,6 +40,9 @@ public class TwoQuery {
 
                 total += sum;
             }
+        }
+        for(int i=0;i<=n;i++){
+             System.out.println(arr[i]);
         }
 
         System.out.println(total);
