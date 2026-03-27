@@ -6,8 +6,23 @@ public class MaxisumSubarrayTwoEle {
         int j=0;
         int[] freq= new int[100001];
         int distinct=0;
+        for(int i=0;i<a.length;i++){
+            if(freq[a[i]]==0){
+                distinct++;
+            }
+            freq[a[i]]++;
+            sum+=a[i];
+            while(distinct>k){
+                freq[a[j]]--;
+                sum-=a[j];
+                if(freq[a[j]]==0){
+                    distinct--;
+                }
+                j++;
+            }
+            maxsum= Math.max(sum,maxsum);
+        }
         
-        maxsum= Math.max(sum,maxsum);
         return maxsum;
     }
     public static void main(String[] args) {
